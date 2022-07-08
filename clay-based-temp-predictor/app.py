@@ -6,7 +6,7 @@ import numpy as np
 
 
 pipe = pickle.load(open('phy-clay-temp.pkl','rb'))
-st.title('Clay Predictor')
+st.title('Clay Based Temperature Predictor')
 
 
 LatDegree = st.number_input('LatDegree')
@@ -19,5 +19,5 @@ MeasureDepth_m = st.number_input('MeasureDepth_m')
 if st.button('Predict Clay'):
       input=pd.DataFrame({'LatDegree':[LatDegree],'LongDegree':[LongDegree],'Clay':[Clay],'MeasureDepth_m':[MeasureDepth_m]})
       result = pipe.predict(input)
-      st.success('THE Clay FOR GIVEN DATA WILL BE {}'.format(result))
+      st.success('THE TEMPERATURE FOR GIVEN DATA WILL BE {}'.format(result))
 # st.header(result)
